@@ -64,8 +64,6 @@ public class GridBoard extends JPanel implements MouseListener{
 	public void constructGraph(){
 		myGraph = new Graph();
 
-		//GraphAL<Spot> spotGraphAL = new GraphAL<>();
-
 		for(int i=0; i<36; i++){
 			Spot verTex = allSpots[i];
 			verTex.setGraphIndex(i);
@@ -77,9 +75,6 @@ public class GridBoard extends JPanel implements MouseListener{
 			int maxCol = i+6;
 			for(int j=i; j<maxCol; j++){
 				Spot verTex = allSpots[j];
-				//verTex.setGraphIndex(j);
-				//myGraph.addVertex(verTex);
-				//System.out.println("Index row "+i+", "+verTex.toString());
 
 				//Find edge in row
 				for(int k=i; k<maxCol; k++){
@@ -107,14 +102,8 @@ public class GridBoard extends JPanel implements MouseListener{
 			}
 
 		}
-
-		//System.out.println("Robo index: "+starting);
-		//System.out.println("Goal: "+goal);
 	}
-	
 
-	
-	
 	///////////////////////////////////////////////////////////////////
 	// No Other code needs to be modified...
 	
@@ -125,14 +114,10 @@ public class GridBoard extends JPanel implements MouseListener{
 			if(!b) System.out.print(" not");
 			System.out.println(" adjacent");
 		} else { //a different button was clicked...
-			myGraph.getShortestPath(roboSpot,goalSpot);
-			/*
 			ArrayList<Spot> sequence = myGraph.getShortestPath(roboSpot,goalSpot);
-			System.out.println("Another button clicked.");
 			for(int i=0; i<sequence.size(); i++){
 				sequence.get(i).setSeqInd(i+1);
 			}
-			*/
 		}
 		this.revalidate();
 		this.repaint();

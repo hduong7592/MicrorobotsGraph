@@ -7,7 +7,6 @@ import java.util.ArrayList;
  * @date 4/20/18
  */
 
-//////////////////////////////////////////////////////////////
 public class Vertex <T>{
     T data;
     ArrayList<Vertex<T>> connected;
@@ -20,9 +19,7 @@ public class Vertex <T>{
     public void addEdge(Vertex<T> v){
         if(!connected.contains(v)) {
             connected.add(v);
-            //System.out.println("Add Edge: "+v.toString()+", size: "+connected.size());
         }
-        //Otherwise mission accomplished...nothing to do
     }
 
     public T getData() {
@@ -41,19 +38,11 @@ public class Vertex <T>{
     }
 
     public boolean equals(Object o){
-
-
         if(o instanceof Vertex){
             return o==this;
         }
 
         T d = (T) o;
         return o.equals(data);
-        /*
-        if(o instanceof Integer){
-            return o.equals(data);
-        }
-        */
-        //return false;
     }
 }
